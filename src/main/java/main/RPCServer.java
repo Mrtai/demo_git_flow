@@ -25,6 +25,7 @@ public class RPCServer {
 
     try (Connection connection = factory.newConnection();
         Channel channel = connection.createChannel()) {
+      System.out.println("Send from "+RPC_QUEUE_NAME);
       channel.queueDeclare(RPC_QUEUE_NAME, false, false, false, null);
       channel.queuePurge(RPC_QUEUE_NAME);
 
