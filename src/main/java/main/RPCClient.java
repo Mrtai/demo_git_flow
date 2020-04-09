@@ -26,6 +26,7 @@ public class RPCClient implements AutoCloseable{
 
   public static void main(String[] argv) throws IOException, TimeoutException {
     try (RPCClient fibonacciRpc = new RPCClient()){
+      System.out.println("Start Client test");
       for (int i = 0; i < 32; i++) {
         String i_str = Integer.toString(i);
         System.out.println(" [x] Requesting fib(" + i_str + ")");
